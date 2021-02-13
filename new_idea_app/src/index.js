@@ -25,19 +25,26 @@ ReactDOM.render(
 );
  
 
-function tick() {
-  <h1>Hello, world</h1>;
-  const element = (
-    <div id>
-      <h1>Hello, world</h1>
-      <h1>Hello, world!</h1>
-      <h2>It is {new Date().toLocaleTimeString()}.</h2>
-    </div>
-  );
-  ReactDOM.render(element,  document);
+class Clock extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {date: new Date()};
+  }
+
+  render() {
+    return (
+      <div>
+        <h1>Hello, world!</h1>
+        <h2>It is {this.state.date.toLocaleTimeString()}.</h2>
+      </div>
+    );
+  }
 }
 
-setInterval(tick, 5000);
+ReactDOM.render(
+  <Clock />,
+  document.getElementById('root')
+);
 
 
 // If you want to start measuring performance in your app, pass a function
