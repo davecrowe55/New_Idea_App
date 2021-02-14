@@ -34,6 +34,9 @@ class Clock extends React.Component {
   render() {
     return (
       <div>
+        <a href="https://reactjs.org/docs/handling-events.html" onClick="console.log('The link was clicked.'); return false">
+  Click me
+</a>
         <h1>Hello, world!</h1>
         <h2>It is {this.state.date.toLocaleTimeString()}.</h2>
       </div>
@@ -45,6 +48,7 @@ ReactDOM.render(
   <Clock />,
   document.getElementById('root')
 );
+
 
 
 // If you want to start measuring performance in your app, pass a function
